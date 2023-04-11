@@ -31,8 +31,8 @@ class UserSerializer(serializers.ModelSerializer):
 
 
 class ImagesSerializer(serializers.ModelSerializer):
-    #data = serializers.ImageField(max_length=None, use_url=True)
-    data = serializers.CharField()
+    data = serializers.ImageField(max_length=None, use_url=True)
+    #data = serializers.CharField()
 
     class Meta:
         model = Images
@@ -46,7 +46,7 @@ class PerevalSerializer(serializers.ModelSerializer):
     user = UserSerializer()
     coords = CoordsSerializer()
     level = LevelSerialize()
-    images = ImagesSerializer(many=True)
+    data = ImagesSerializer(many=True)
 
     class Meta:
         model = Pereval
