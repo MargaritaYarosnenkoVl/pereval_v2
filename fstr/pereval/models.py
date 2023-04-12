@@ -68,9 +68,10 @@ class Images(models.Model):
     data = models.ImageField(upload_to='photos/%Y/%m/%d/', verbose_name='Изображение', null=True, blank=True)
     title = models.CharField(max_length=255)
     date_added = models.DateField(auto_now_add=True)
+    #image = models.CharField(max_length=255, null=True, blank=True)
 
     def __str__(self):
-        return f"id: {self.pk} title:{self.title}"
+        return f"id: {self.pk} title:{self.title} {self.data}"
 
     class Meta:
         verbose_name = "Изображения"
